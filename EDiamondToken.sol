@@ -313,12 +313,12 @@ contract EDiamondToken is StandardToken, Ownable {
 
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(judgeEnableForTransfer(msg.sender, _value));
-        super.transfer(_to, _value);
+        return super.transfer(_to, _value);
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(judgeEnableForTransfer(_from, _value));
-        super.transferFrom(_from, _to, _value);
+        return super.transferFrom(_from, _to, _value);
     }
 
 }
